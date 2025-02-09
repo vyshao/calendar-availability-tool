@@ -1,0 +1,11 @@
+# Manifest file with actual credentials
+manifest.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor folders
+.vscode/
+.idea/
+*.swp

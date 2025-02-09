@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar Availability</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #202124;
+    }
+  
+    select, input[type="time"] {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      background-color: white;
+      color: #202124;
+      height: 40px;
+      box-sizing: border-box;
+    }
+  
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+  
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  
+    .checkbox-group label {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+  
+    #output {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      height: 40px;
+      box-sizing: border-box;
+    }
+  
+    button:hover {
+      background-color: #357abd;
+    }
+  
+    /* Remove browser default styles for time input */
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      background: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-group">
+    <label for="availabilityTimezone">Set availability in:</label>
+    <select id="availabilityTimezone"></select>
+  </div>
+  <div class="form-group">
+    <label for="startTime">Available start time:</label>
+    <input type="time" id="startTime" value="09:00">
+  </div>
+  <div class="form-group">
+    <label for="endTime">Available end time:</label>
+    <input type="time" id="endTime" value="17:00">
+  </div>  
+  <div class="form-group">
+    <label for="displayTimezone">Display times in:</label>
+    <select id="displayTimezone"></select>
+  </div>
+  <div class="checkbox-group">
+    <input type="checkbox" id="includeWeekends">
+    <label for="includeWeekends">Include weekends?</label>
+  </div>
+  <button id="generate">Generate Availability</button>
+  <div id="output"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

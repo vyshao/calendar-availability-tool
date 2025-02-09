@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Calendar Availability Tool",
+  "version": "1.0",
+  "description": "Generate availability text from your calendar",
+  "permissions": [
+    "storage",
+    "identity",
+    "identity.email",
+    "commands"
+  ],
+  "oauth2": {
+    "client_id": "${YOUR_CLIENT_ID}",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A",
+        "mac": "Command+Shift+A"
+      },
+      "description": "Generate availability text"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
